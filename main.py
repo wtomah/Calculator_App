@@ -18,38 +18,37 @@ def divide(left: float, right: float)-> int: #divide function
         result = left // right
         return result
     
-def power(left: int, right: int) -> int:
+def power(left: float, right: float) -> int:
     result = left ** right
     return result
 
 
 print("Welcome to the Calculator ")
 
-first = float(input("Enter a number: "))
+while True:
+    try:
+        first = float(input("Enter a number: "))
+        second = float(input("Enter another number:" ))
+    except ValueError:
+        print("Invalid Input. Please enter a number.")
+        continue
 
-operation = input("Select an operation: ")
+    operation = input("Select an operation: ")
+    if operation == "+": #add operation
+        print("Answer: ",add(first, second)) #calls add function
 
-second = float(input("Enter another number:" ))
+    elif operation == "-": #subtract operation
+        print("Answer: ",subtract(first, second)) #calls subtract function
 
+    elif operation == "/": #divide operation
+        print("Answer: ",divide(first, second)) #calls divide function
 
-
-if operation == "+": #add operation
-    print("Answer: ",add(first, second)) #calls add function
-
-elif operation == "-": #subtract operation
-    print("Answer: ",subtract(first, second)) #calls subtract function
-
-elif operation == "/": #divide operation
-    print("Answer: ",divide(first, second)) #calls divide function
-
-elif operation == "*": #multiplication operation
-    print("Answer: ",multiply(first, second)) #calls multiply function
-elif operation == "^": #power operation
-    print("Answer: ",power(first, second)) #calls power function
-
-else:
-    print("Invalid Entry")
+    elif operation == "*": #multiplication operation
+        print("Answer: ",multiply(first, second)) #calls multiply function
+    elif operation == "^": #power operation
+        print("Answer: ",power(first, second)) #calls power function
 
 
-#Let's Update
+    else:
+        print("Invalid Entry")
 
