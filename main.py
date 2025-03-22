@@ -17,15 +17,19 @@ def divide(left: float, right: float)-> int: #divide function
     else:
         result = left // right
         return result
+    
+def power(left: int, right: int) -> int:
+    result = left ** right
+    return result
 
 
 print("Welcome to the Calculator ")
 
-first = int(input("Enter a number: "))
+first = float(input("Enter a number: "))
 
 operation = input("Select an operation: ")
 
-second = int(input("Enter another number:" ))
+second = float(input("Enter another number:" ))
 
 
 
@@ -40,7 +44,12 @@ elif operation == "/": #divide operation
 
 elif operation == "*": #multiplication operation
     print("Answer: ",multiply(first, second)) #calls multiply function
+elif operation == "^": #power operation
+    print("Answer: ",power(first, second)) #calls power function
+
 else:
     print("Invalid Entry")
 
+
+#Let's Update
 
